@@ -1,0 +1,18 @@
+<div class="mb-3">
+  <!-- <input 
+    class="form-control"
+    [type]="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+  /> -->
+  <input 
+  class="form-control"
+  [placeholder]="placeholder"
+  [disabled]="disabled"
+  [ngClass]="{
+    'is-valid': state === 'active',
+    'is-invalid': state === 'error',
+    'selected-input': state === 'selected'
+  }"
+/>
+</div>
