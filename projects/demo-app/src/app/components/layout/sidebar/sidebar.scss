@@ -1,23 +1,75 @@
-.sidebar {
+
+.vertical-nav {
   width: 250px;
-  background: #0d2b4c;
-  color: white;
-  height: calc(100vh - 60px);
-  padding: 20px;
+  background-color: #0b203e; /* Light grey/blue background jaisa original mein hai */
+  height: 100vh;
+  border-right: 1px solid #e2e8f0;
+  padding-top: 5px;
 }
 
-.sidebar ul {
+/* Har ek menu item ki wrapper */
+.nav-item-wrapper {
+  margin-bottom: 2px;
+}
+
+/* Main Link Style */
+.nav-link-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  color: #c0cbdd; 
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* --- ACTIVE STATE LOGIC (Original Jaisa) --- */
+/* Jab click ho to background WHITE ho jaye aur left mein BLUE border aaye */
+.active-link {
+  background-color: #ffffff !important; /* Pure White background on click */
+  color: #1e4f98 !important; /* Theme Blue Text */
+  border-left: 4px solid #1e4f98 !important; /* Dark blue stripe */
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.05); /* Halki si depth */
+}
+
+/* Sub-menu container ka background bhi white rakhein active hone par */
+.active-parent {
+  background-color: #ffffff;
+}
+
+.sub-menu-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  background-color: #ffffff; /* Submenu background pure white */
+  display: none;
 }
 
-.sidebar li {
-  padding: 10px;
-  cursor: pointer;
+.active-parent .sub-menu-list {
+  display: block;
 }
 
-.sidebar li.active {
-  background: #ffffff;
-  color: black;
-  border-radius: 8px;
+/* Sub-menu items ki styling */
+.sub-link {
+  display: block;
+  padding: 10px 20px 10px 45px;
+  color: #718096;
+  text-decoration: none;
+  font-size: 13px;
+  border-left: 4px solid transparent;
+}
+
+/* Sub-item active hone par */
+.sub-active {
+  color: #1e4f98 !important;
+  font-weight: 600;
+  background-color: #f0f7ff; /* Sub-item active hone par light blue tint */
+}
+
+/* Hover effect */
+.nav-link-main:hover:not(.active-link) {
+  background-color: #edf2f7;
 }

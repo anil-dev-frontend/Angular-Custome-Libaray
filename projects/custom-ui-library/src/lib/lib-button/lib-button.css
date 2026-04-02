@@ -1,0 +1,73 @@
+.lib-btn {
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+/* COLORS */
+.lib-red {
+  background: #d14545;
+  color: #fff;
+}
+
+/* SIZE */
+.lib-large {
+  padding: 12px 26px;
+  font-size: 16px;
+}
+
+.lib-medium {
+  padding: 10px 20px;
+}
+
+.lib-small {
+  padding: 6px 14px;
+}
+
+/* STATE */
+.lib-hover:hover {
+  opacity: 0.85;
+}
+
+.lib-active {
+  transform: scale(0.95);
+}
+
+.lib-disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+}
+
+/* ICON */
+.icon-left i { order: 0; }
+.icon-right i { order: 1; }
+
+.lib-red {
+  background: #d14545;
+  color: white;
+}
+
+.lib-blue {
+  background: #1e4f98;
+  color: white;
+}
+
+.lib-grey-red {
+  background: #f5c6cb;
+  color: #721c24;
+}
+
+.lib-gray-blue {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.lib-white {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+}

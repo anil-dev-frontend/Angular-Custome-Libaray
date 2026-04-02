@@ -13,6 +13,7 @@ export class InputDemo {
 placeholder = 'Enter Sample Text';
 
   state = 'default';
+  
 
   states = ['default', 'active', 'selected', 'disabled', 'error'];
 

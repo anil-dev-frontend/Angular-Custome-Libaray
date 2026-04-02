@@ -1,0 +1,9 @@
+<button [ngClass]="classes" [disabled]="state === 'disabled'">
+
+  <i *ngIf="iconPosition === 'left'" [class]="icon"></i>
+
+  {{label}}
+
+  <i *ngIf="iconPosition === 'right'" [class]="icon"></i>
+
+</button>

@@ -1,8 +1,27 @@
-<div class="sidebar">
-  <ul>
-    <li routerLink="/input" routerLinkActive="active">Input Box</li>
-    <li>Button</li>
-    <li>Dropdown</li>
-    <li>Accordion</li>
+
+<div class="vertical-nav swire-big-scrollbar">
+  <ul class="nav flex-column">
+    <li *ngFor="let item of sideMenuBar" 
+        class="nav-item-wrapper" 
+        routerLinkActive="active-parent">
+      
+      <a class="nav-link-main" 
+         [routerLink]="item.route" 
+         routerLinkActive="active-link"
+         [routerLinkActiveOptions]="{exact: false}">
+        <span>{{item.name}}</span>
+        <svg *ngIf="(item.child || []).length > 0" width="10" height="10" viewBox="0 0 16 17">
+          <path d="M8.53027 10.2939L11.8919 7.1083..." fill="currentColor" />
+        </svg>
+      </a>
+
+      <ul class="sub-menu-list">
+        <li *ngFor="let data of item.child">
+          <a class="sub-link" [routerLink]="data.route" routerLinkActive="sub-active">
+            {{data.name}}
+          </a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
