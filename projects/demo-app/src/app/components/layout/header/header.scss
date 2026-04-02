@@ -1,0 +1,39 @@
+.header {
+  height: 60px;
+  background: #0d2b4c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box {
+  width: 30px;
+  height: 30px;
+  background: red;
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu .active {
+  border-bottom: 2px solid red;
+}
