@@ -44,12 +44,18 @@
         </div>
 
         <div class="code-section mt-4">
-          <div class="code-box-header">
+          <!-- <div class="code-box-header">
             <span>Code Example</span>
             <button class="copy-btn-link" (click)="copyCode()">
               <i class="fa fa-copy"></i> Copy
             </button>
-          </div>
+          </div> -->
+          <div class="code-box-header">
+           <span>Code Example</span>
+
+          <lib-copy-button [text]="code"></lib-copy-button>
+
+           </div>
           <div class="code-content">
             <pre><code>{{ code }}</code></pre>
           </div>
@@ -80,3 +86,4 @@
     </div>
   </div>
 </div>
+

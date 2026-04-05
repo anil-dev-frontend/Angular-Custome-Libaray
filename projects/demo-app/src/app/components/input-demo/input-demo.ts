@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { InputComponent } from '../../../../../custom-ui-library/src/lib/input/input';
+import { InputComponent } from 'custom-ui-library';
 
 @Component({
   selector: 'app-input-demo',

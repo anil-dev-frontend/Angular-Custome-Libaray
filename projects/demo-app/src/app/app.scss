@@ -20,6 +20,33 @@ app-sidebar {
   overflow-x: hidden;
   display: block; /* Ensure it behaves as a block */
 }
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e4f98; // blue tone like original
+  letter-spacing: 1px;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+}
+.logo-container {
+  height: 60px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 28px;
+  display: block;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
 
 /* Sidebar aur Content ko side-by-side lane ke liye */
 .form-presentation {

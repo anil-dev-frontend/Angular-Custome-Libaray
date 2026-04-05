@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LibButton } from '../../../../../custom-ui-library/src/lib/lib-button/lib-button';
+import {LibButton} from 'custom-ui-library';
+import {CopyButton} from '../../../../../custom-ui-library/src/lib/copy-button/copy-button';
+
 
 @Component({
   selector: 'app-button-demo',
-  imports: [CommonModule,FormsModule,LibButton],
+  standalone: true,
+  imports: [CommonModule, FormsModule, LibButton,CopyButton],
   templateUrl: './button-demo.html',
-  styleUrl: './button-demo.scss',
+  styleUrls: ['./button-demo.scss'],
 })
 export class ButtonDemo {
 color = 'red';
@@ -58,6 +61,6 @@ color = 'red';
   // 🔥 COPY FUNCTION
   copyCode() {
     navigator.clipboard.writeText(this.code);
-    alert('Copied!');
+   
   }
 }
