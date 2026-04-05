@@ -39,3 +39,26 @@ pre {
   color: #f03738 !important;              /* 🔥 placeholder */
   opacity: 1;                         /* 🔥 important for visibility */
 }
+/* 1. Parent container ko relative banayein aur flex use karein */
+.input-field {
+  position: relative; /* Icon ko position karne ke liye zaroori hai */
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ya jo bhi aapki width ho */
+}
+
+/* 2. Input box ki styling */
+.form-control {
+  width: 100%;
+  padding-right: 35px; /* Right side mein jagah chhodein taaki text icon ke niche na dabe */
+  /* Baaki existing styles... */
+}
+
+/* 3. Icon ko input ke andar position karein */
+.input-icon {
+  position: absolute;
+  right: 10px; /* Right se thoda andar */
+  color: #666; /* Aapka manchaha color */
+  pointer-events: none; /* Taaki icon par click karne se input focus na hate */
+  cursor: pointer;
+}

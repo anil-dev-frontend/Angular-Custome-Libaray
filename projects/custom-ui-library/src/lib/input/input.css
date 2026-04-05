@@ -19,3 +19,13 @@
   background-color: #f0f2f3;
   cursor: not-allowed;
 }
+:host ::ng-deep .input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+:host ::ng-deep .input-icon {
+  position: absolute;
+  right: 10px;
+}

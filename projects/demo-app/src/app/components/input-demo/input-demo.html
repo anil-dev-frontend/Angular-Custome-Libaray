@@ -15,22 +15,19 @@
             #inputRef
             formControlName="inputText"
 
-            [ngClass]="(inputTextControl?.touched && inputTextControl?.errors) || state === 'error' ? 'error' : ''"
+            [ngClass]="(f?.touched && f?.errors) || state === 'error' ? 'error' : ''"
 
             [swClass]="inputClassName"
             [swPlaceholder]="placeholder"
-
             [swIsDisable]="swIsDisable"
             [swReadOnlyProperties]="swReadOnlyProperties"
-
+            [swDefaultValue]="swDefaultValue"
             [swType]="type"
             [maxLength]="maxLength"
             [minLength]="minLength"
-
             [swIsShowIcon]="swIsShowIcon"
             [swIconClass]="swIconClass"
             [swIsShowLoader]="swIsShowLoader"
-
             [swAutocomplete]="swAutocomplete"
             [locator]="locator"
 

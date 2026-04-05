@@ -45,8 +45,8 @@ export class InputComponent {
   // Extra Features
   @Input() swIsShowIcon: boolean = false;
   @Input() swIsShowLoader: boolean = false;
-  @Input() swAutocomplete: string = 'off';
-  @Input() locator: string = '';
+  @Input() swAutocomplete: any = 'off';
+  @Input() locator: any = '';
 
   // =========================
   // 🔹 OUTPUT EVENTS

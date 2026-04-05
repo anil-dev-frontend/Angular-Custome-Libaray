@@ -54,7 +54,7 @@ initForm() {
   });
 }
 
-get inputTextControl() {
+get f() {
   return this.inputForm.get('inputText');
 }
 
