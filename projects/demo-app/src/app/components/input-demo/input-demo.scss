@@ -3,10 +3,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fafafa;
+  border-radius: 8px;
+   border: 1px solid #91979D;
+}
+
+.code-box {
+  background: #f8f9fa;
 }
 
 pre {
-  background: #f5f5f5;
+  background: #1e1e1e;
+  color: #fff;
   padding: 15px;
   border-radius: 6px;
+  font-size: 13px;
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+:host ::ng-deep .error .form-control {
+  border: 2px solid #f03738 !important;
+  color: #f03738 !important;              /* 🔥 input text */
+}
+
+:host ::ng-deep .error .form-control::placeholder {
+  color: #f03738 !important;              /* 🔥 placeholder */
+  opacity: 1;                         /* 🔥 important for visibility */
 }

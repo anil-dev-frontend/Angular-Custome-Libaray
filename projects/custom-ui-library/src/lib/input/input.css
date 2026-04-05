@@ -1,6 +1,21 @@
-input {
-  border-radius: 6px;
+.input-field .input-control {
+  min-height: 40px;
+  width: 100%;
+  padding: 5px 10px;
+
+  border: 1px solid #91979d;
+  border-radius: 10px;
+
+  background-color: #fff;
+  outline: none;
+  box-shadow: none;
+
+  caret-color: gray;
+  box-sizing: border-box;
 }
-.selected-input {
-  border: 2px solid blue;
+.input-field .input-control:disabled {
+  color: #bfbfbf;
+  border-color: #c2c9d1;
+  background-color: #f0f2f3;
+  cursor: not-allowed;
 }

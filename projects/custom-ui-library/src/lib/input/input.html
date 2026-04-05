@@ -1,18 +1,36 @@
-<div class="mb-3">
-  <!-- <input 
-    class="form-control"
-    [type]="type"
-    [placeholder]="placeholder"
-    [disabled]="disabled"
-  /> -->
-  <input 
-  class="form-control"
-  [placeholder]="placeholder"
-  [disabled]="disabled"
-  [ngClass]="{
-    'is-valid': state === 'active',
-    'is-invalid': state === 'error',
-    'selected-input': state === 'selected'
-  }"
-/>
+<div class="input-field" [ngClass]="[swClass, swWrapperClass]">
+
+  <input
+    #myInput
+    class="form-control input-control"
+
+    [type]="swType"
+    [placeholder]="swPlaceholder"
+    [disabled]="swIsDisable"
+    [readonly]="swReadOnlyProperties"
+    [attr.maxlength]="maxLength"
+    [attr.minlength]="minLength"
+    [attr.autocomplete]="swAutocomplete"
+    [attr.locator]="locator"
+    [value]="swDefaultValue"
+
+    (input)="handleInput($event)"
+    (blur)="handleBlur($event)"
+    (focus)="onFocus($event)"
+    (keyup)="onKeyUp($event)"
+    (keyup.enter)="onEnter($event)"
+    (keypress)="onKeyPress($event)"
+  />
+
+  <!-- ICON -->
+  <span
+    *ngIf="swIsShowIcon"
+    class="input-icon"
+    [ngClass]="swIconClass"
+    (click)="onIconClick()">
+  </span>
+
+  <!-- LOADER -->
+  <span *ngIf="swIsShowLoader" class="spin-loader"></span>
+
 </div>
