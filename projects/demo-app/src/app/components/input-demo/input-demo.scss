@@ -13,7 +13,7 @@
 }
 
 pre {
-  background: #1e1e1e;
+  background: #0b203e;
   color: #fff;
   padding: 15px;
   border-radius: 6px;
@@ -61,4 +61,24 @@ pre {
   color: #666; /* Aapka manchaha color */
   pointer-events: none; /* Taaki icon par click karne se input focus na hate */
   cursor: pointer;
+}
+
+/* Button container ko relative banayein */
+.btn-primary {
+  position: relative;
+}
+
+/* Jab 'Copied!' ho tab ek chhota popup dikhe */
+.btn-primary[title="Copied!"]::after {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
 }

@@ -12,33 +12,26 @@ import { InputComponent } from 'custom-ui-library';
 export class InputDemo implements OnInit {
 
 @ViewChild('inputRef') inputRef: any;
+inputForm!: FormGroup;
 
 placeholder = 'Enter Sample Text';
 state: string = 'default';
 states = ['default', 'active', 'selected', 'disabled', 'error'];
 
-inputForm!: FormGroup;
-
-currentValue: string = '';
-
-// 🔥 ALL PROPERTIES (SWIRE STYLE)
 swIsDisable: boolean = false;
 swReadOnlyProperties: boolean = false;
 swIsShowIcon: boolean = true;
 swIsShowLoader: boolean = false;
-
 swIconClass: string = 'fa fa-search';
 swAutocomplete: string = 'off';
 locator: string = 'input-demo';
-
 type: string = 'text';
 maxLength: number = 20;
 minLength: number = 2;
-
 swDefaultValue: string = '';
 inputClassName: string = 'default';
-
 textOutput: string = '';
+copyStatus: string = 'Copy to clipboard'; 
 
 constructor(private fb: FormBuilder) {}
 
@@ -47,7 +40,7 @@ ngOnInit() {
   this.updateCode();
 }
 
-// FORM
+// Form Initialization
 initForm() {
   this.inputForm = this.fb.group({
     inputText: ['', Validators.required]
@@ -58,38 +51,35 @@ get f() {
   return this.inputForm.get('inputText');
 }
 
-// 🔥 STATE CHANGE (MAIN LOGIC)
-changeState(s: string) {
-  this.state = s;
-
+// STATE CHANGE (MAIN LOGIC)
+changeState(val: string) {
+  this.state = val;
   const control = this.inputForm.get('inputText');
 
   // reset
   this.swIsDisable = false;
   this.swDefaultValue = '';
-  this.inputClassName = s;
+  this.inputClassName = val;
   control?.enable();
-  this.currentValue = '';
 
-  if (s === 'active') {
+  if (val === 'active') {
     setTimeout(() => {
       this.inputRef?.myInput?.nativeElement.focus();
     });
   }
 
-  else if (s === 'disabled') {
+  else if (val === 'disabled') {
     this.swIsDisable = true;
     control?.disable();
   }
 
-  else if (s === 'selected') {
+  else if (val === 'selected') {
     const value = 'Lorem Ipsum dolor sit amet';
     control?.setValue(value);
     this.swDefaultValue = value;
-    this.currentValue = value;
   }
 
-  else if (s === 'error') {
+  else if (val === 'error') {
     control?.setValue('');
     control?.markAsTouched();
     control?.markAsDirty();
@@ -104,7 +94,7 @@ changeState(s: string) {
 
 // EVENTS
 onValueChange(val: string) {
-  this.currentValue = val;
+
 }
 
 onFocus(e: any) {}
@@ -114,7 +104,7 @@ onEnter(e: any) {}
 onKeyPress(e: any) {}
 
 
-// 🔥 FULL COPY CODE (SWIRE LEVEL)
+// FULL COPY CODE (SWIRE LEVEL)
 updateCode() {
   this.textOutput = `<lib-input
   formControlName="inputText"
@@ -135,16 +125,13 @@ updateCode() {
 ></lib-input>`;
 }
 
-// COPY
+// COPY TO CLIPBOARD
 copyCode() {
   navigator.clipboard.writeText(this.textOutput);
-
-  const msg = document.createElement('div');
-  msg.innerText = 'Copied!';
-  msg.className = 'copy-toast';
-
-  document.body.appendChild(msg);
-
-  setTimeout(() => msg.remove(), 1500);
+  this.copyStatus = 'Copied!';
+  setTimeout(() => {
+    this.copyStatus = 'Copy to clipboard';
+  }, 2000);
 }
+
 }

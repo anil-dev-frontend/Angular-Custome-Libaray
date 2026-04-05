@@ -1,7 +1,7 @@
 
 .vertical-nav {
   width: 250px;
-  background-color: #0b203e; /* Light grey/blue background jaisa original mein hai */
+  background-color: #0b203e; 
   height: 100vh;
   border-right: 1px solid #e2e8f0;
   padding-top: 5px;
@@ -26,13 +26,13 @@
   transition: all 0.2s ease;
 }
 
-/* --- ACTIVE STATE LOGIC (Original Jaisa) --- */
+
 /* Jab click ho to background WHITE ho jaye aur left mein BLUE border aaye */
 .active-link {
-  background-color: #ffffff !important; /* Pure White background on click */
-  color: #1e4f98 !important; /* Theme Blue Text */
-  border-left: 4px solid #1e4f98 !important; /* Dark blue stripe */
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.05); /* Halki si depth */
+  background-color: #ffffff !important; 
+  color: #1e4f98 !important; 
+  border-left: 4px solid #1e4f98 !important; 
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.05); 
 }
 
 /* Sub-menu container ka background bhi white rakhein active hone par */
@@ -44,7 +44,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  background-color: #ffffff; /* Submenu background pure white */
+  background-color: #ffffff; 
   display: none;
 }
 
@@ -66,10 +66,51 @@
 .sub-active {
   color: #1e4f98 !important;
   font-weight: 600;
-  background-color: #f0f7ff; /* Sub-item active hone par light blue tint */
+  background-color: #f0f7ff; 
 }
 
 /* Hover effect */
 .nav-link-main:hover:not(.active-link) {
   background-color: #edf2f7;
 }
+
+.vertical-nav {
+  width: 250px;
+  background-color: #0b203e; 
+ 
+  height: 100vh;           
+  position: fixed;        
+  top: 0;
+  left: 0;
+  overflow-y: auto;       
+  z-index: 1000;          
+ 
+  
+  border-right: 1px solid #e2e8f0;
+  padding-top: 60px;      
+}
+
+/* --- SCROLLBAR KO SUNDAR BANANE KE LIYE (Sirf Sidebar ke liye) --- */
+.vertical-nav::-webkit-scrollbar {
+  width: 5px; /* Patla scrollbar */
+}
+
+.vertical-nav::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.vertical-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); 
+  border-radius: 10px;
+}
+
+.vertical-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4); 
+}
+
+/* --- IMPORTANT: Main Content ko right mein dhaklo --- */
+/* Ye code us div par lagayein jisme aapka 'Input Box' ya main page ka content hai */
+:host-context(body) .main-content-container { 
+  margin-left: 250px; 
+}
+
