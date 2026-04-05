@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {LibButton} from 'custom-ui-library';
-import {CopyButton} from '../../../../../custom-ui-library/src/lib/copy-button/copy-button';
-
+import { CopyButton } from 'custom-ui-library';
 
 @Component({
   selector: 'app-button-demo',
